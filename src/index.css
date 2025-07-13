@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+.img{
+
+    width: 100%;
+    height: 100%;
+} */
+
+.client{
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* .person{
+
+    width: 1110px;
+    height: 224.67px;
+} */
+.item1{
+
+    width: 350px;
+    height: auto;
+    
+}
+.input-form{
+
+    width: 1110px;
+    height: 60px;
+}
+
+.button{
+
+    width: 112.97px;
+    height: 61px;
+}
+
+
+
+.main-btn{
+
+    width: 538px;
+    height: 73.33px;
+}
+.input{
+
+    width: 538px;
+    height: 73.33px;
+}
+
