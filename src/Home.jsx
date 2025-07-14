@@ -51,7 +51,7 @@ function Home() {
           <h2 className="capitalize text-yellow-600 text-sm sm:text-base md:text-xl">
             We have been serving
           </h2>
-          <h1 className="uppercase text-[28px] sm:text-4xl md:text-6xl lg:text-[170px] font-bold leading-tight tracking-wide max-w-md sm:max-w-none">
+          <h1 className="uppercase text-[28px] sm:text-4xl md:text-6xl lg:text-[170px]  font-semibold leading-tight tracking-wide max-w-md sm:max-w-none">
             COFFE
           </h1>
           <h2 className="text-xs sm:text-sm md:text-lg tracking-wider">* SINCE 1950 *</h2>
