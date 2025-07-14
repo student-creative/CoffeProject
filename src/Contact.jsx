@@ -29,52 +29,48 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ Save in contacts only, not bookings
     const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 
     const newContact = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-      submittedAt: new Date().toLocaleString(), // Optional: timestamp
+      ...formData,
+      submittedAt: new Date().toLocaleString(),
     };
 
     contacts.push(newContact);
     localStorage.setItem('contacts', JSON.stringify(contacts));
-
     toast.success('✅ Message sent successfully!');
 
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <div>
+    <div className="relative overflow-x-hidden">
       <Slider />
       <Navbar />
 
-      {/* Hero Text */}
-      <div className="absolute top-56 w-full flex flex-col items-center justify-center text-white z-10 px-4">
-        <div className="menu-bar" data-aos="fade-down">
-          <h1 className="text-7xl uppercase">Contact</h1>
-        </div>
-        <div className="navbar space-x-3 text-xl mt-3" data-aos="fade-up">
-          <Link className="text-white no-underline hover:underline" to="/">Home</Link>
-          <span className="text-white"> / </span>
-          <span className="no-underline text-white">Contact</span>
+      {/* Hero Heading */}
+      <div
+        className="absolute top-40 sm:top-56 w-full flex flex-col items-center justify-center text-white z-20 px-4"
+        data-aos="fade-down"
+      >
+        <h1 className="text-4xl sm:text-5xl md:text-7xl uppercase font-bold">Contact</h1>
+        <div className="flex flex-wrap justify-center items-center gap-2 text-base sm:text-lg mt-3">
+          <Link to="/" className="text-white no-underline hover:underline">Home</Link>
+          <span className="text-white">/</span>
+          <span className="text-white">Contact</span>
         </div>
       </div>
 
       {/* Contact Form Section */}
-      <div className="bg-white py-20 px-4 sm:px-6 lg:px-8" data-aos="zoom-in-up">
-        <div className="max-w-4xl mx-auto shadow-xl rounded-lg p-10 bg-gray-100">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Get in Touch</h2>
+      <div className="w-full py-20 px-4 sm:px-6 lg:px-20 bg-white" data-aos="zoom-in-up">
+        <div className="max-w-4xl mx-auto bg-gray-100 shadow-2xl rounded-lg p-6 sm:p-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">
+            Get in Touch
+          </h2>
+
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-gray-700 mb-2">Name</label>
+              <label className="block text-gray-700 mb-2 font-medium">Name</label>
               <input
                 type="text"
                 name="name"
@@ -85,8 +81,9 @@ function Contact() {
                 required
               />
             </div>
+
             <div>
-              <label className="block text-gray-700 mb-2">Email</label>
+              <label className="block text-gray-700 mb-2 font-medium">Email</label>
               <input
                 type="email"
                 name="email"
@@ -97,8 +94,9 @@ function Contact() {
                 required
               />
             </div>
+
             <div>
-              <label className="block text-gray-700 mb-2">Message</label>
+              <label className="block text-gray-700 mb-2 font-medium">Message</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -109,8 +107,12 @@ function Contact() {
                 required
               ></textarea>
             </div>
+
             <div className="text-center">
-              <button type="submit" className="bg-amber-600 text-white px-6 py-3 rounded-md hover:bg-amber-700 transition">
+              <button
+                type="submit"
+                className="bg-amber-600 text-white px-8 py-3 rounded-md hover:bg-amber-700 transition-all duration-300"
+              >
                 Send Message
               </button>
             </div>

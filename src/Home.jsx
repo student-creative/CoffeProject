@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Image imports
 import service1 from './img/services1.jpg';
 import service2 from './img/services2.jpg';
 import service3 from './img/services3.jpg';
@@ -20,6 +19,8 @@ import person2 from './img/person2.jpg';
 import person3 from './img/person3.jpg';
 import BookingForm from './components/BookingForm';
 
+// ... imports remain the same
+
 function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -27,7 +28,7 @@ function Home() {
 
   return (
     <div>
-      <div className="main relative w-full h-screen overflow-hidden">
+      <div className="main relative w-full h-[400px] sm:h-screen overflow-hidden">
         <Carousel fade className="w-full h-full">
           <Carousel.Item>
             <ExampleCarouselImage1 />
@@ -39,16 +40,26 @@ function Home() {
             <ExampleCarouselImage3 />
           </Carousel.Item>
         </Carousel>
+
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+
         <div className="absolute top-0 left-0 right-0 z-20">
           <Navbar />
         </div>
-        <div className="absolute top-1/3 w-full z-20 flex flex-col items-center justify-center text-white px-4 text-center">
-          <h2 className="capitalize text-yellow-600 text-base md:text-xl lg:text-2xl">We have been serving</h2>
-          <h1 className="uppercase text-[40px] sm:text-[60px] md:text-[100px] lg:text-[170px] leading-none font-bold">coffe</h1>
-          <h2 className="text-sm md:text-lg m-0">* SINCE 1950 *</h2>
+
+        <div className="absolute top-1/2 transform -translate-y-1/2 w-full z-20 flex flex-col items-center justify-center text-white px-4 text-center space-y-2 sm:space-y-4">
+          <h2 className="capitalize text-yellow-600 text-sm sm:text-base md:text-xl">
+            We have been serving
+          </h2>
+          <h1 className="uppercase text-[28px] sm:text-4xl md:text-6xl lg:text-[170px] font-bold leading-tight tracking-wide max-w-md sm:max-w-none">
+            COFFE
+          </h1>
+          <h2 className="text-xs sm:text-sm md:text-lg tracking-wider">* SINCE 1950 *</h2>
         </div>
       </div>
+
+      {/* The rest of the file remains unchanged... */}
+
 
       <div className="bg-amber-50 pt-5 px-4 sm:px-6 md:px-16" data-aos="fade-up">
         <div className="w-full mx-auto max-w-screen-xl px-4 sm:px-6 md:px-8">
@@ -101,7 +112,6 @@ function Home() {
                 <p className="mt-2 text-sm text-gray-700">Sit lorem ipsum et diam elitr est dolor sed duo...</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -144,7 +154,7 @@ function Home() {
                 </div>
               </div>
             </div>
-           <BookingForm/>
+            <BookingForm />
           </div>
         </div>
       </div>

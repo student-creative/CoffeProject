@@ -14,65 +14,66 @@ function Reservation() {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
+      {/* Slider with Navbar on top */}
       <Slider />
       <Navbar />
 
-      {/* Page Title and Breadcrumb */}
-      <div className="absolute top-56 w-full flex flex-col items-center justify-center text-white z-10 px-4">
-        <div className="menu-bar">
-          <h1 className='text-7xl uppercase' data-aos="fade-down">Reservation</h1>
-        </div>
-        <div className="navbar space-x-3 text-xl mt-3">
-          <Link className='text-white no-underline hover:underline' to="/">Home</Link>
-          <span className='text-white'> / </span>
-          <span className='no-underline text-white'>Reservation</span>
+      {/* Hero Text Overlay */}
+      <div className="absolute top-40 sm:top-52 w-full flex flex-col items-center justify-center text-white z-20 px-4" data-aos="fade-down">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl uppercase tracking-wide">Reservation</h1>
+        <div className="mt-3 text-sm sm:text-base md:text-lg flex items-center space-x-2">
+          <Link to="/" className="text-white hover:underline">Home</Link>
+          <span className="text-white">/</span>
+          <span className="text-white">Reservation</span>
         </div>
       </div>
 
       {/* Reservation Section */}
-      <div className="w-full my-5 px-3 flex items-center justify-center">
-        <div className="relative w-full max-w-7xl h-auto min-h-[800px]">
-          {/* Background Image */}
+      <div className="w-full my-10 px-4 flex items-center justify-center">
+        <div className="relative w-full max-w-7xl min-h-[700px] sm:min-h-[800px] rounded-xl overflow-hidden shadow-lg">
+
+          {/* Background */}
           <img
             src={require('./img/back3.jpg')}
-            alt=""
+            alt="Reservation Background"
             className="w-full h-full object-cover absolute inset-0 z-0"
           />
 
-          {/* Black Overlay */}
-          <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
           {/* Content */}
-          <div className="relative z-20 flex flex-col lg:flex-row items-start justify-between gap-8 p-6 lg:p-12 h-full">
-            
-            {/* Left Text with offer */}
+          <div className="relative z-20 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start justify-between p-6 sm:p-10 md:p-14 h-full">
+
+            {/* Left Offer Text */}
             <div className="w-full lg:w-1/2" data-aos="fade-right">
-              <h1 className="text-white text-5xl sm:text-6xl font-bold mb-3">30% OFF</h1>
-              <h1 className="text-white text-xl sm:text-2xl mb-3">For Online Reservation</h1>
-              <p className="text-white font-montserrat text-sm sm:text-base mb-5">
-                Lorem justo clita erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
+              <h1 className="text-white text-4xl sm:text-5xl font-bold mb-3">30% OFF</h1>
+              <h2 className="text-white text-lg sm:text-xl mb-3">For Online Reservation</h2>
+              <p className="text-white text-sm sm:text-base mb-6 leading-relaxed">
+                Book your table now and enjoy fresh coffee with a perfect ambience. Valid for a limited time only!
               </p>
 
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-start">
-                  <i className="mr-3 text-orange-500"><FaCheck /></i>
-                  <h5 className="text-white">Freshly Brewed Coffee</h5>
+                  <FaCheck className="text-orange-500 mr-3 mt-1" />
+                  <span className="text-white text-sm sm:text-base">Freshly Brewed Coffee</span>
                 </div>
                 <div className="flex items-start">
-                  <i className="mr-3 text-orange-500"><FaCheck /></i>
-                  <h5 className="text-white">Perfect Ambience</h5>
+                  <FaCheck className="text-orange-500 mr-3 mt-1" />
+                  <span className="text-white text-sm sm:text-base">Perfect Ambience</span>
                 </div>
                 <div className="flex items-start">
-                  <i className="mr-3 text-orange-500"><FaCheck /></i>
-                  <h5 className="text-white">Quick Online Booking</h5>
+                  <FaCheck className="text-orange-500 mr-3 mt-1" />
+                  <span className="text-white text-sm sm:text-base">Quick Online Booking</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Form */}
-           <BookingForm/>
+            {/* Right Booking Form */}
+            <div className="w-full lg:w-1/2" data-aos="fade-left">
+              <BookingForm />
+            </div>
           </div>
         </div>
       </div>

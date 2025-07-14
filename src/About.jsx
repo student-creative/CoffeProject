@@ -16,16 +16,27 @@ function About() {
         <div>
             <Slider />
             <Navbar />
-            <div className="absolute top-56 w-full flex flex-col items-center justify-center text-white z-10 px-4" data-aos="fade-down">
-                <div className="menu-bar">
-                    <h1 className='text-7xl uppercase'>about us</h1>
-                </div>
-                <div className="navbar space-x-3 text-xl mt-3">
-                    <Link className='text-white no-underline hover:underline' to="/">Home </Link>
-                    <Link to="/" className='text-white no-underline'>/</Link>
-                    <Link className='no-underline text-white' to="/menu">About</Link>
-                </div>
-            </div>
+          <div
+  className="absolute top-40 sm:top-56 w-full flex flex-col items-center justify-center text-white z-10 px-4"
+  data-aos="fade-down"
+>
+  <div className="menu-bar">
+    <h1 className="uppercase text-4xl sm:text-6xl md:text-7xl  text-center">
+      about us
+    </h1>
+  </div>
+
+  <div className="navbar mt-2 sm:mt-4 text-base sm:text-xl flex flex-wrap items-center justify-center space-x-2 text-center">
+    <Link to="/" className="text-white no-underline hover:underline">
+      Home
+    </Link>
+    <span>/</span>
+    <Link to="/menu" className="text-white no-underline hover:underline">
+      About
+    </Link>
+  </div>
+</div>
+
 
             <div className="bg-amber-50 p-5 sm:p-10 md:p-16">
                 <div className="mx-auto px-6 sm:px-12 md:px-20 max-w-screen-xl">
