@@ -14,7 +14,7 @@ function Reservation() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative max-w-screen overflow-x-hidden">
       {/* Slider with Navbar on top */}
       <Slider />
       <Navbar />

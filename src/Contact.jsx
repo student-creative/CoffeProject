@@ -44,7 +44,7 @@ function Contact() {
   };
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative max-w-screen overflow-x-hidden">
       <Slider />
       <Navbar />
 

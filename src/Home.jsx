@@ -19,8 +19,6 @@ import person2 from './img/person2.jpg';
 import person3 from './img/person3.jpg';
 import BookingForm from './components/BookingForm';
 
-// ... imports remain the same
-
 function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -28,7 +26,8 @@ function Home() {
 
   return (
     <div>
-      <div className="main relative w-full h-[400px] sm:h-screen overflow-hidden">
+      {/* ✅ Carousel Height Fixed for Tablet */}
+      <div className="main relative w-full h-[400px] sm:h-[550px] md:h-[650px] lg:h-screen overflow-hidden">
         <Carousel fade className="w-full h-full">
           <Carousel.Item>
             <ExampleCarouselImage1 />
@@ -48,19 +47,19 @@ function Home() {
         </div>
 
         <div className="absolute top-1/2 transform -translate-y-1/2 w-full z-20 flex flex-col items-center justify-center text-white px-4 text-center space-y-2 sm:space-y-4">
-          <h2 className="capitalize text-yellow-600 text-sm sm:text-base md:text-xl">
+          <h2 className="capitalize text-yellow-600 text-sm sm:text-base md:text-lg">
             We have been serving
           </h2>
-          <h1 className="uppercase text-[28px] sm:text-4xl md:text-6xl lg:text-[170px]  font-semibold leading-tight tracking-wide max-w-md sm:max-w-none">
+          <h1 className="uppercase text-[28px] sm:text-4xl md:text-5xl lg:text-[170px] font-semibold leading-tight tracking-wide max-w-md sm:max-w-none">
             COFFE
           </h1>
-          <h2 className="text-xs sm:text-sm md:text-lg tracking-wider">* SINCE 1950 *</h2>
+          <h2 className="text-xs sm:text-sm md:text-base tracking-wider">
+            * SINCE 1950 *
+          </h2>
         </div>
       </div>
 
-      {/* The rest of the file remains unchanged... */}
-
-
+      {/* ⬇️ Rest of your original code untouched below */}
       <div className="bg-amber-50 pt-5 px-4 sm:px-6 md:px-16" data-aos="fade-up">
         <div className="w-full mx-auto max-w-screen-xl px-4 sm:px-6 md:px-8">
           <div className="w-full pt-24 pb-5 text-center">

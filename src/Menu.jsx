@@ -8,7 +8,7 @@ import Footer from './Footer';
 function Menu() {
   
   return (
-    <div>
+    <div className='max-w-screen overflow-x-hidden'>
       <Slider />
       <Navbar />
 

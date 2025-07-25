@@ -18,18 +18,33 @@ import Export from './admin/Export';
 import Users from './admin/Users';
 import ProtectedRoute from './admin/ProtectedRoute';
 
+// ✅ ScrollToTop Component (NEW)
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
-      <Routes>
+      {/* ✅ Scroll to top on route change */}
+      <ScrollToTop />
 
+      <Routes>
         {/* 🌐 Public Website Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<Contact />} />
-     
         <Route path="/pages/Reservation" element={<Reservation />} />
         <Route path="/pages/Testimonial" element={<Testimonial />} />
 
@@ -45,7 +60,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/admin/bookings"
           element={
@@ -54,7 +68,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/admin/analytics"
           element={
@@ -63,7 +76,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/admin/export"
           element={
@@ -72,7 +84,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/admin/users"
           element={
@@ -81,7 +92,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
       </Routes>
     </Router>
   );

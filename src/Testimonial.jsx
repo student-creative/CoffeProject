@@ -13,7 +13,7 @@ function Testimonial() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden relative">
+    <div className="max-w-screen overflow-x-hidden relative">
       {/* Hero Section with Slider */}
       <Slider />
       <Navbar />

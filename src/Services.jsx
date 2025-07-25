@@ -13,7 +13,7 @@ function Services() {
     }, []);
 
     return (
-        <div>
+        <div className='max-w-screen overflow-x-hidden'>
             <Slider />
             <Navbar />
             <div
